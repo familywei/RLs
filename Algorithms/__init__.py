@@ -1,16 +1,11 @@
 from .config import *
-from .dpg import DPG
-from .ddpg import DDPG
-from .ppo import PPO
-from .sac import SAC
-from .sac_no_v import SAC_NO_V
-from .td3 import TD3
-from .pg import PG
-from .dqn import DQN
-from .ddqn import DDQN
-from .duelingdqn import DDDQN
-from .ac import AC
-from .a2c import A2C
-from .madpg import MADPG
-from .maddpg import MADDPG
-from .matd3 import MATD3
+import tensorflow as tf
+try:
+    tf_version = tf.version.VERSION[0]
+except:
+    tf_version = tf.VERSION[0]
+finally:
+    if tf_version == '1':
+        from .tf1algos import *
+    elif tf_version == '2':
+        from .tf2algos import *
