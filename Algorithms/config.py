@@ -54,7 +54,7 @@ ppo_config = {
     'lr': 5.0e-4,
     'lambda_': 0.95,
     'max_episode': 50000,
-    'batch_size': 100,
+    'batch_size': 1000,
     'epoch': 5
 }
 dpg_config = {
